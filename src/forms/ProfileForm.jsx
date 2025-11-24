@@ -1,33 +1,20 @@
 import React, { useState } from "react";
-import "./ProfileForm.css"; // <-- Import the CSS file
 
-export default function ProfileForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+export default function ProfileForm({ onSave }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Profile submitted: ${name}, ${email}`);
-    setName("");
-    setEmail("");
+    onSave({ firstName, lastName });
+    setFirstName("");
+    setLastName("");
   };
 
   return (
-    <form className="profile-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
+    <form onSubmit={handleSubmit}>
+      <input value={firstName} onChange={(e) => setFirstName(e.target.value)} placeholder="First Name" />
+      <input value={lastName} onChange={(e) => setLastName(e.target.value)} placeholder="Last Name" />
       <button type="submit">Save</button>
     </form>
   );

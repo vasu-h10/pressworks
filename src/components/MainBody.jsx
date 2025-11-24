@@ -1,15 +1,11 @@
 import React from "react";
 import "./MainBody.css";
+import VendorList from "./VendorList.jsx";
 
-export default function MainBody({ vendors }) {
+export default function MainBody({ vendors, vendorProfiles }) {
   return (
-    <main className="main-body">
-      {vendors.map((vendor) => (
-        <div key={vendor.id} className="vendor-card">
-          <h3>{vendor.name}</h3>
-          <p>{vendor.description}</p>
-        </div>
-      ))}
-    </main>
+    <div className="main-body">
+      <VendorList vendorProfiles={vendorProfiles} vendors={vendors} />
+    </div>
   );
 }
