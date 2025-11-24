@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="40" height="40">
+  <!-- Circle outline -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="green" stroke-width="2"/>
+
+  <!-- Head -->
+  <circle cx="100" cy="50" r="30" fill="green" />
+
+  <!-- Shoulders / Body -->
+  <path d="M30 160 L45 115 100 80 155 115 170 160 Z" fill="green" />
+</svg>

@@ -1,0 +1,74 @@
+/* --- GLOBAL STYLES --- */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: white; /* Light mode body */
+  color: black;            /* Light mode text */
+}
+
+/* Dark mode body */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #646cff;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9; /* Light mode button */
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+body.dark-mode button {
+  background-color: #1a1a1a; /* Dark mode button */
+  color: white;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+}
