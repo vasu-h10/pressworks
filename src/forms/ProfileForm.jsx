@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "./ProfileForm.css";
+import "./ProfileForm.css"; // <-- Import the CSS file
 
-export default function ProfileForm({ onClose }) {
+export default function ProfileForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
@@ -10,29 +10,25 @@ export default function ProfileForm({ onClose }) {
     alert(`Profile submitted: ${name}, ${email}`);
     setName("");
     setEmail("");
-    onClose();
   };
 
   return (
-    <div className="form-overlay" onClick={onClose}>
-      <form className="profile-form" onClick={(e) => e.stopPropagation()} onSubmit={handleSubmit}>
-        <button type="button" className="close-btn" onClick={onClose}>✕</button>
-        <input
-          type="text"
-          placeholder="Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <button type="submit">Save</button>
-      </form>
-    </div>
+    <form className="profile-form" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        required
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        required
+      />
+      <button type="submit">Save</button>
+    </form>
   );
 }
