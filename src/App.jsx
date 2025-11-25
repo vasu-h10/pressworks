@@ -1,23 +1,32 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import "./App.css";
+import MainBody from "./components/MainBody";
+import { db } from "./firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 export default function App() {
+  const [vendors, setVendors] = useState([]);
+
+  // Load vendors from Firestore on mount
+  useEffect(() => {
+    const fetchVendors = async () => {
+      const querySnapshot = await getDocs(collection(db, "vendors"));
+      const vendorData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setVendors(vendorData);
+    };
+    fetchVendors();
+  }, []);
+
+  // Save profile to Firestore
+  const handleSaveProfile = async (profileData) => {
+    const docRef = await addDoc(collection(db, "vendors"), profileData);
+    setVendors([...vendors, { id: docRef.id, ...profileData }]);
+  };
+
   return (
-    <div className="app">
-      <Header />
-      <main style={{ padding: "1rem", minHeight: "200px", background: "#f0f0f0" }}>
-        <h2>MainBody Placeholder</h2>
-        <p>This area represents your vendor list or main content.</p>
-      </main>
-      <footer style={{ padding: "1rem", background: "#007bff", color: "#fff", textAlign: "center" }}>
-        Footer Placeholder
-      </footer>
-    </div>
+    <>
+      <Header onSaveProfile={handleSaveProfile} />
+      <MainBody vendors={vendors} />
+    </>
   );
 }
-
-// If using Vite's main.jsx entry
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);

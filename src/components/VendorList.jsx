@@ -1,17 +1,15 @@
 import React from "react";
-import VendorCard from "./VendorCard.jsx";
+import VendorCard from "./VendorCard";
 import "./VendorList.css";
 
 export default function VendorList({ vendors }) {
-  if (!vendors || vendors.length === 0) {
-    return <p className="no-vendors">No vendors available</p>;
-  }
-
+  if (!vendors.length) return <p>No vendors yet.</p>;
   return (
     <div className="vendor-list">
-      {vendors.map((vendor) => (
-        <VendorCard key={vendor.id} vendor={vendor} />
+      {vendors.map((vendor, idx) => (
+        <VendorCard key={idx} vendor={vendor} />
       ))}
     </div>
   );
 }
+
