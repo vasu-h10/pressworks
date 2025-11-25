@@ -1,6 +1,13 @@
 .vendor-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+}
+
+.no-vendors {
+  text-align: center;
+  margin: 2rem 0;
+  color: #777;
+  font-size: 1rem;
 }
