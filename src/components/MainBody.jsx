@@ -1,11 +1,10 @@
 import React from "react";
-import "./MainBody.css";
-import VendorList from "./VendorList.jsx";
+import VendorList from "./VendorList";
 
-export default function MainBody({ vendors, vendorProfiles }) {
+export default function MainBody({ vendorProfiles }) {
   return (
     <div className="main-body">
-      <VendorList vendorProfiles={vendorProfiles} vendors={vendors} />
+      <VendorList vendorProfiles={vendorProfiles} />
     </div>
   );
 }

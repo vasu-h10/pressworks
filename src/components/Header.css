@@ -7,12 +7,12 @@
   height: 100px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   gap: 2rem;
-  background-color: white !important; /* Default light mode */
+  background-color: white !important;
   color: black;
 }
 
 .header.dark-mode {
-  background-color: black !important; /* Dark mode background */
+  background-color: black !important;
   color: white;
 }
 
@@ -33,7 +33,6 @@
   display: block;
 }
 
-/* --- DONATE ICON CONTAINER --- */
 .donation-icon {
   display: flex;
   align-items: center;
@@ -42,7 +41,7 @@
 
 .donate-hand-coin {
   position: relative;
-  width: 220px;   /* Bigger donate icon */
+  width: 220px;
   height: 220px;
 }
 
@@ -56,7 +55,6 @@
   z-index: 1;
 }
 
-/* --- MOBILE RESPONSIVE --- */
 @media (max-width: 480px) {
   .header {
     padding: 0 1rem;
@@ -71,7 +69,7 @@
   }
 
   .donate-hand-coin {
-    width: 140px;  /* Bigger mobile size */
+    width: 140px;
     height: 140px;
   }
 }

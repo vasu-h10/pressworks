@@ -1,0 +1,22 @@
+import Header from "./components/Header";
+import React, { useState } from "react";
+import ProfileForm from "./components/ProfileForm";
+import MainBody from "./components/MainBody";
+import "./App.css";
+
+export default function App() {
+  const [vendorProfiles, setVendorProfiles] = useState([]);
+
+  const handleSaveProfile = (profile) => {
+    setVendorProfiles((prev) => [...prev, profile]);
+  };
+
+  return (
+    <div className="app">
+      <h1>PressWorks Vendor Registration</h1>
+  <Header />
+      <ProfileForm onSave={handleSaveProfile} />
+      <MainBody vendorProfiles={vendorProfiles} />
+    </div>
+  );
+}
