@@ -1,22 +1,32 @@
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import React, { useState } from "react";
-import ProfileForm from "./components/ProfileForm";
 import MainBody from "./components/MainBody";
-import "./App.css";
+import { db } from "./firebase";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 export default function App() {
-  const [vendorProfiles, setVendorProfiles] = useState([]);
+  const [vendors, setVendors] = useState([]);
 
-  const handleSaveProfile = (profile) => {
-    setVendorProfiles((prev) => [...prev, profile]);
+  // Load vendors from Firestore on mount
+  useEffect(() => {
+    const fetchVendors = async () => {
+      const querySnapshot = await getDocs(collection(db, "vendors"));
+      const vendorData = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+      setVendors(vendorData);
+    };
+    fetchVendors();
+  }, []);
+
+  // Save profile to Firestore
+  const handleSaveProfile = async (profileData) => {
+    const docRef = await addDoc(collection(db, "vendors"), profileData);
+    setVendors([...vendors, { id: docRef.id, ...profileData }]);
   };
 
   return (
-    <div className="app">
-      <h1>PressWorks Vendor Registration</h1>
-  <Header />
-      <ProfileForm onSave={handleSaveProfile} />
-      <MainBody vendorProfiles={vendorProfiles} />
-    </div>
+    <>
+      <Header onSaveProfile={handleSaveProfile} />
+      <MainBody vendors={vendors} />
+    </>
   );
 }
