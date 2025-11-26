@@ -1,24 +1,24 @@
-.app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-main {
-  flex: 1;
-  overflow-y: auto;
-}
-
-footer {
-  flex-shrink: 0;
-  background-color: #eee;
-  text-align: center;
-  padding: 0.5rem;
-}
-
-/* Mobile responsive */
-@media (max-width: 480px) {
-  .app {
-    font-size: 0.9rem;
-  }
-}
+.app { */
+  display: flex; */
+  flex-direction: column; */
+  height: 100vh; */
+} */
+ */
+main { */
+  flex: 1; */
+  overflow-y: auto; */
+} */
+ */
+footer { */
+  flex-shrink: 0; */
+  background-color: #eee; */
+  text-align: center; */
+  padding: 0.5rem; */
+} */
+ */
+/* Mobile responsive */ */
+@media (max-width: 480px) { */
+  .app { */
+    font-size: 0.9rem; */
+  } */
+} */

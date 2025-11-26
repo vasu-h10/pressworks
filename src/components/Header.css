@@ -1,75 +1,75 @@
-/* --- HEADER LAYOUT --- */
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2rem;
-  height: 100px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  gap: 2rem;
-  background-color: white !important;
-  color: black;
-}
-
-.header.dark-mode {
-  background-color: black !important;
-  color: white;
-}
-
-.header-item {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  min-width: 0;
-}
-
-.header-item img,
-.header-item .icon {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  display: block;
-}
-
-.donation-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.donate-hand-coin {
-  position: relative;
-  width: 220px;
-  height: 220px;
-}
-
-.donate-hand {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 0 1rem;
-    height: 80px;
-    gap: 1rem;
-  }
-
-  .header-item img,
-  .header-item .icon {
-    width: 35px;
-    height: 35px;
-  }
-
-  .donate-hand-coin {
-    width: 140px;
-    height: 140px;
-  }
-}
+/* --- HEADER LAYOUT --- */ */
+.header { */
+  display: flex; */
+  justify-content: center; */
+  align-items: center; */
+  padding: 0 2rem; */
+  height: 100px; */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+  gap: 2rem; */
+  background-color: white !important; */
+  color: black; */
+} */
+ */
+.header.dark-mode { */
+  background-color: black !important; */
+  color: white; */
+} */
+ */
+.header-item { */
+  flex: 1; */
+  display: flex; */
+  align-items: center; */
+  justify-content: center; */
+  cursor: pointer; */
+  min-width: 0; */
+} */
+ */
+.header-item img, */
+.header-item .icon { */
+  width: 70px; */
+  height: 70px; */
+  object-fit: contain; */
+  display: block; */
+} */
+ */
+.donation-icon { */
+  display: flex; */
+  align-items: center; */
+  justify-content: center; */
+} */
+ */
+.donate-hand-coin { */
+  position: relative; */
+  width: 220px; */
+  height: 220px; */
+} */
+ */
+.donate-hand { */
+  width: 100%; */
+  height: 100%; */
+  display: block; */
+  position: absolute; */
+  top: 0; */
+  left: 0; */
+  z-index: 1; */
+} */
+ */
+@media (max-width: 480px) { */
+  .header { */
+    padding: 0 1rem; */
+    height: 80px; */
+    gap: 1rem; */
+  } */
+ */
+  .header-item img, */
+  .header-item .icon { */
+    width: 35px; */
+    height: 35px; */
+  } */
+ */
+  .donate-hand-coin { */
+    width: 140px; */
+    height: 140px; */
+  } */
+} */
