@@ -1,7 +1,7 @@
-/* src/components/VendorList.css */
-.vendor-list { */
-  display: flex; */
-  flex-direction: column; */
-  gap: 1rem; */
-  padding: 1rem 0; */
-} */
+/* src/components/VendorList.css
+.vendor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0;
+}

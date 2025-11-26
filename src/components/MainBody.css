@@ -1,9 +1,9 @@
-.main-body { */
-  padding: 2rem; */
-  display: flex; */
-  justify-content: center; */
-  flex-wrap: wrap; */
-  gap: 1.5rem; */
-  background-color: #f5f5f5; */
-  min-height: 80vh; */
-} */
+.main-body {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background-color: #f5f5f5;
+  min-height: 80vh;
+}

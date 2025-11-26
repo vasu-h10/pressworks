@@ -1,26 +1,19 @@
-import React from "react";
+import React, { useState, Suspense } from "react";
 import Header from "./components/Header";
-import VendorList from "./components/VendorList";
-import ProfileForm from "./components/ProfileForm";
-import { db } from "./firebase";
-import { collection, addDoc } from "firebase/firestore";
+
+// Dynamic imports
+const VendorList = React.lazy(() => import("./components/VendorList"));
+const VendorCard = React.lazy(() => import("./components/VendorCard"));
 
 export default function App() {
-
-  const handleSaveProfile = async (profileData) => {
-    try {
-      // Add new vendor to Firestore
-      const docRef = await addDoc(collection(db, "vendors"), profileData);
-      console.log("Vendor saved with ID: ", docRef.id);
-    } catch (err) {
-      console.error("Error saving vendor: ", err);
-    }
-  };
+  const [vendors, setVendors] = useState([]);
 
   return (
     <>
-      <Header onSaveProfile={handleSaveProfile} />
-      <VendorList />
+      <Header onSaveProfile={(profile) => setVendors([...vendors, profile])} />
+      <Suspense fallback={<div>Loading vendors...</div>}>
+        <VendorList vendors={vendors} />
+      </Suspense>
     </>
   );
 }
