@@ -1,19 +1,23 @@
-import React, { useState, Suspense } from "react";
-import Header from "./components/Header";
+import React, { useState } from "react";
+import ProfileForm from "./ProfileForm";
+import VendorCard from "./VendorCard";
 
-// Dynamic imports
-const VendorList = React.lazy(() => import("./components/VendorList"));
-const VendorCard = React.lazy(() => import("./components/VendorCard"));
+export default function MainBody() {
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [vendorData, setVendorData] = useState(null); // Optional: store vendor info
 
-export default function App() {
-  const [vendors, setVendors] = useState([]);
+  const handleRegistrationComplete = (data) => {
+    setIsRegistered(true);
+    setVendorData(data); // store form data if needed in VendorCard
+  };
 
   return (
-    <>
-      <Header onSaveProfile={(profile) => setVendors([...vendors, profile])} />
-      <Suspense fallback={<div>Loading vendors...</div>}>
-        <VendorList vendors={vendors} />
-      </Suspense>
-    </>
+    <div className="main-body p-4">
+      {!isRegistered ? (
+        <ProfileForm onComplete={handleRegistrationComplete} />
+      ) : (
+        <VendorCard vendor={vendorData} />
+      )}
+    </div>
   );
 }
