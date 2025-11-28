@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import ProfileForm from "../forms/ProfileForm";
-import DonationPanel from "../forms/DonationPanel";
+import ProfileForm from "../forms/ProfileForm.jsx";
+import DonationPanel from "../forms/DonationPanel.jsx";
 
 export default function Header({ onSaveProfile }) {
   const [darkMode, setDarkMode] = useState(false);
