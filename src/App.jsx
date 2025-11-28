@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import ProfileForm from "./ProfileForm";
 import VendorCard from "./VendorCard";
 
-export default function MainBody() {
+export default function App() {
   const [isRegistered, setIsRegistered] = useState(false);
-  const [vendorData, setVendorData] = useState(null); // Optional: store vendor info
+  const [vendorData, setVendorData] = useState(null);
 
   const handleRegistrationComplete = (data) => {
     setIsRegistered(true);
-    setVendorData(data); // store form data if needed in VendorCard
+    setVendorData(data); // Pass user data to VendorCard
   };
 
   return (
